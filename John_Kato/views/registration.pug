@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="./bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" href="./covid.css")
+    title Document
+  body(style="margin-left: 250px;")
+    .container
+      .row
+        .col-md-12
+            form.needs-validation(novalidate="" action="/reg" method="POST"  onsubmit="return formValidation()" name="registrationform")
+                img(src="form-header-image.png" style="padding-top: 30px;")
+                h4.ministry Ministry of Health
+                h4.tap COVID-19 (CORONA VIRUS)
+                h4.test Virus-Test Registration Form
+                div.form-row
+
+                    div.col-md-6
+                        label(for="") Surname
+                        br
+                        input(type='text', name='surname',  minlength="1" maxlength="16"  class='form-control',  id='surname', placeholder='Enter Surname', required, data-required-msg='Surname is required')
+                    div.col-md-6
+                        label(for="") Given name
+                        br
+                        input(type='text', name='firstname', id='firstname',  minlength="1" maxlength="16" class='form-control',  placeholder='Enter Surname', required, data-required-msg='firstname is required')
+                br
+                br
+                    
+                label(for="") Date
+                input(type='date', name='date',  class='form-control', id='date', placeholder='Enter Date', required, data-required-msg='Date is required')
+                label(for="") Place of residence
+                input(type='text', name='location', class='form-control', id='location',  minlength="1" maxlength="20" placeholder='Enter Place of Residence', required, data-required-msg='Place of Residence is required')
+                br
+                br
+                label(for="") Occupation
+                input(type='text', name='job', class='form-control',  minlength="5" maxlength="50" id='job', placeholder='Enter Occupation', required, data-required-msg='Occupation is required')
+                label(for="") Nationality
+                input(type='text', name='origin', class='form-control',  minlength="5" maxlength="20" id='origin', placeholder='Nationality', required, data-required-msg='Nationality is required')
+                br
+                br
+                label(for="") Gender
+                br
+                br
+                input(type="radio" name="gen" value="female")
+                | Female
+                input(type="radio" style="margin-left: 100px;" name="gen" placeholder="male" value="male")
+                | Male
+                br
+                br
+                label(for="") Category
+                select(style="margin-left: 92px;height:40px;width:230px;" type="text" name="category" id="")
+                option(selected="" value="Default") select category
+                option(value="Asymptomatic") 
+                option(value="3") 
+                br
+                br
+                button.btn.btn-primary(style="margin-left: 900px;" type="submit") Register
+script(src="/validation.js")
